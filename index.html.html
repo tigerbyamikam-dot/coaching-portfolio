@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USSF National B License - Professional Soccer Coach</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0d1b2a;
+    --blue: #1565c0;
+    --blue-light: #1e88e5;
+    --gold: #f4b942;
+    --gold-dark: #e0a030;
+    --white: #ffffff;
+    --off-white: #f7f9fc;
+    --gray: #6b7280;
+    --gray-light: #e8ecf0;
+    --text: #1a202c;
+    --section-pad: 72px 40px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13, 27, 42, 0.97);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 60px;
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 1rem;
+    color: var(--white); letter-spacing: 1px;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 28px; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, #1a2f4a 60%, #0d2b4e 100%);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 100px 40px 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before { display: none; }
+  .hero-inner {
+    display: flex; align-items: center; justify-content: center;
+    gap: 52px; max-width: 960px; width: 100%;
+    position: relative; z-index: 1;
+  }
+  .hero-photo-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .hero-photo {
+    width: 140px; height: 140px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 4px solid var(--gold);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    display: block;
+  }
+  .hero-photo-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.68rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; text-align: left; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.7rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 6px 20px; border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: clamp(2.4rem, 6vw, 4.2rem);
+    color: var(--white); line-height: 1.1;
+    margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 2px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .hero-tagline {
+    font-size: 1.05rem; color: rgba(255,255,255,0.85);
+    max-width: 640px; margin: 0 auto 40px;
+    font-weight: 300; line-height: 1.8;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 48px;
+    flex-wrap: wrap; margin-bottom: 44px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: 2.6rem;
+    color: var(--gold); display: block; line-height: 1;
+  }
+  .hero-stat .label {
+    font-size: 0.7rem; color: rgba(255,255,255,0.6);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px;
+  }
+  .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.8rem;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    text-decoration: none; border-radius: 4px;
+    transition: all 0.25s;
+  }
+  .btn-gold {
+    background: var(--gold); color: var(--navy);
+  }
+  .btn-gold:hover { background: var(--gold-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(244,185,66,0.4); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.4); color: var(--white);
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+  .hero-scroll {
+    position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.4); font-size: 0.7rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .hero-scroll::after {
+    content: '↓';
+    font-size: 1.2rem; animation: bounce 1.8s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ── UNIQUE EDGE STRIP ── */
+  .edge-strip {
+    background: var(--gold);
+    padding: 18px 40px;
+    display: flex; justify-content: center; align-items: center;
+    gap: 48px; flex-wrap: wrap;
+  }
+  .edge-item {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.8rem;
+    letter-spacing: 1px; text-transform: uppercase;
+    color: var(--navy);
+  }
+  .edge-item .icon { font-size: 1.3rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: var(--section-pad); }
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.72rem;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 8px;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--navy); line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .divider {
+    width: 52px; height: 4px;
+    background: var(--gold); margin-bottom: 32px;
+  }
+  .max-w { max-width: 1100px; margin: 0 auto; }
+
+  /* ── ABOUT ── */
+  .about-bg { background: var(--off-white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 64px; align-items: center;
+  }
+  .about-photo-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 20px;
+  }
+  .about-photo {
+    width: 220px; height: 220px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 32px rgba(21,101,192,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    display: block;
+  }
+  .about-photo-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 1.1rem;
+    color: var(--navy); text-align: center; letter-spacing: 1px;
+  }
+  .about-photo-title {
+    font-size: 0.8rem; color: var(--blue);
+    text-align: center; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase; margin-top: -14px;
+  }
+  .about-text p {
+    font-size: 1rem; color: #374151; margin-bottom: 18px;
+    line-height: 1.85;
+  }
+  .about-text p strong { color: var(--navy); font-weight: 600; }
+  .about-pillars {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .pillar {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-top: 3px solid var(--blue);
+    border-radius: 4px; padding: 20px;
+  }
+  .pillar .icon { font-size: 1.8rem; margin-bottom: 8px; display: block; }
+  .pillar h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.85rem;
+    color: var(--navy); margin-bottom: 6px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .pillar p { font-size: 0.82rem; color: var(--gray); line-height: 1.55; }
+
+  /* ── BEYOND SOCCER ── */
+  .beyond-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px; margin-top: 16px;
+  }
+  .beyond-card {
+    background: var(--navy);
+    border-radius: 8px; padding: 36px 28px;
+    color: var(--white); text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .beyond-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+  }
+  .beyond-card .bc-icon {
+    font-size: 3rem; display: block; margin-bottom: 16px;
+  }
+  .beyond-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 1.05rem;
+    color: var(--gold); margin-bottom: 12px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .beyond-card p { font-size: 0.88rem; color: rgba(255,255,255,0.8); line-height: 1.7; }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy-bg { background: var(--navy); }
+  .philosophy-bg h2 { color: var(--white); }
+  .philosophy-bg .section-label { color: var(--gold); }
+  .philosophy-bg .divider { background: var(--gold); }
+  .philosophy-intro {
+    font-size: 1.15rem; color: rgba(255,255,255,0.85);
+    max-width: 720px; line-height: 1.8; margin-bottom: 48px;
+    font-style: italic;
+  }
+  .values-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; margin-bottom: 48px;
+  }
+  .value-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; padding: 28px 24px;
+    transition: background 0.25s;
+  }
+  .value-card:hover { background: rgba(255,255,255,0.08); }
+  .value-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: 2.5rem;
+    color: var(--gold); opacity: 0.4; display: block;
+    line-height: 1; margin-bottom: 10px;
+  }
+  .value-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 1rem;
+    color: var(--white); margin-bottom: 8px;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .value-card p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.65; }
+  .philosophy-quote {
+    border-left: 4px solid var(--gold);
+    padding: 20px 28px;
+    background: rgba(244,185,66,0.08);
+    border-radius: 0 6px 6px 0;
+  }
+  .philosophy-quote blockquote {
+    font-size: 1.1rem; color: rgba(255,255,255,0.9);
+    font-style: italic; line-height: 1.75;
+  }
+  .philosophy-quote cite {
+    display: block; margin-top: 10px;
+    font-size: 0.8rem; color: var(--gold);
+    font-style: normal; font-weight: 600; letter-spacing: 1px;
+  }
+
+  /* ── CERTIFICATIONS ── */
+  .certs-bg { background: var(--off-white); }
+  .certs-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .cert-card {
+    background: var(--white);
+    border-radius: 6px; padding: 24px 20px;
+    border: 1px solid var(--gray-light);
+    display: flex; align-items: flex-start; gap: 16px;
+    transition: box-shadow 0.2s;
+  }
+  .cert-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+  .cert-badge {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--blue); color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: 0.75rem; flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  .cert-card.gold .cert-badge { background: var(--gold); color: var(--navy); }
+  .cert-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.88rem;
+    color: var(--navy); margin-bottom: 4px;
+  }
+  .cert-card p { font-size: 0.78rem; color: var(--gray); }
+
+  /* ── EXPERIENCE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 2px; background: var(--gray-light);
+  }
+  .timeline-item { position: relative; margin-bottom: 40px; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-dot {
+    position: absolute; left: -35px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--blue); border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--blue);
+  }
+  .timeline-item.featured .timeline-dot { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+  .timeline-meta {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 6px; flex-wrap: wrap;
+  }
+  .timeline-date {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.72rem;
+    color: var(--blue); text-transform: uppercase; letter-spacing: 1px;
+  }
+  .timeline-org {
+    font-size: 0.75rem; color: var(--gray);
+    background: var(--gray-light); padding: 2px 10px; border-radius: 12px;
+  }
+  .timeline-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 1.08rem;
+    color: var(--navy); margin-bottom: 10px;
+  }
+  .timeline-item ul {
+    list-style: none; padding: 0;
+  }
+  .timeline-item ul li {
+    font-size: 0.9rem; color: #4b5563;
+    padding-left: 16px; position: relative;
+    margin-bottom: 6px; line-height: 1.6;
+  }
+  .timeline-item ul li::before {
+    content: '→';
+    position: absolute; left: 0; color: var(--blue);
+    font-size: 0.8rem;
+  }
+
+  /* ── RESULTS ── */
+  .results-bg { background: var(--blue); }
+  .results-bg h2 { color: var(--white); }
+  .results-bg .section-label { color: rgba(255,255,255,0.7); }
+  .results-bg .divider { background: var(--gold); }
+  .results-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; margin-bottom: 48px;
+  }
+  .result-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px; padding: 28px 20px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .result-card .trophy { font-size: 2rem; margin-bottom: 12px; display: block; }
+  .result-card h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.9rem;
+    color: var(--white); margin-bottom: 6px;
+  }
+  .result-card p { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+  .record-bar {
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 28px 32px;
+    display: flex; gap: 48px; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+  }
+  .record-item { text-align: center; }
+  .record-item .big {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900; font-size: 2.4rem;
+    color: var(--gold); display: block; line-height: 1;
+  }
+  .record-item .sm {
+    font-size: 0.72rem; color: rgba(255,255,255,0.6);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-bg { background: var(--off-white); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border-radius: 8px; padding: 32px 28px;
+    border: 1px solid var(--gray-light);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute; top: -10px; left: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem; font-weight: 900;
+    color: var(--gold); line-height: 1; opacity: 0.3;
+  }
+  .testimonial-card p {
+    font-size: 0.92rem; color: #374151;
+    line-height: 1.8; margin-bottom: 20px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.9rem; color: var(--white); flex-shrink: 0;
+  }
+  .author-info .name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.88rem; color: var(--navy);
+  }
+  .author-info .role { font-size: 0.75rem; color: var(--gray); }
+  .stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 12px; letter-spacing: 2px; }
+
+  /* ── CONTACT ── */
+  .contact-bg {
+    background: var(--navy);
+    text-align: center;
+  }
+  .contact-bg h2 { color: var(--white); }
+  .contact-bg .section-label { color: var(--gold); }
+  .contact-bg .divider { margin: 0 auto 32px; }
+  .contact-intro {
+    color: rgba(255,255,255,0.75); max-width: 560px;
+    margin: 0 auto 40px; font-size: 1rem; line-height: 1.8;
+  }
+  .contact-links {
+    display: flex; justify-content: center; gap: 32px;
+    flex-wrap: wrap; margin-bottom: 48px;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-size: 0.9rem; transition: color 0.2s;
+  }
+  .contact-link:hover { color: var(--gold); }
+  .contact-link .ci { font-size: 1.2rem; }
+  .contact-grid {
+    display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+  }
+  .contact-btn {
+    background: var(--gold); color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; font-size: 0.82rem;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 14px 32px; border-radius: 4px;
+    text-decoration: none; display: inline-block;
+    transition: all 0.2s;
+  }
+  .contact-btn:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #050d15;
+    padding: 24px 40px;
+    text-align: center;
+    color: rgba(255,255,255,0.35);
+    font-size: 0.75rem; letter-spacing: 1px;
+  }
+
+  /* ── UTILITIES ── */
+  .text-center { text-align: center; }
+  .text-center .divider { margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    section { padding: 52px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .hero-inner { flex-direction: column; text-align: center; }
+    .hero-content { text-align: center; }
+    .hero-stats { justify-content: center; }
+    .beyond-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .edge-strip { gap: 24px; }
+    .hero-stats { gap: 28px; }
+    .contact-links { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-brand">AMIKAM <span>YALOVETZKY</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#experience">Experience</a>
+    <a href="#results">Results</a>
+    <a href="#testimonials">References</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-photo-wrap">
+      <img src="amikam.jpg" alt="Amikam Yalovetzky" class="hero-photo">
+      <div class="hero-photo-label">Coach A</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">⚽ USSF National B License · Professional Soccer Coach</div>
+      <h1>Amikam <span>Yalovetzky</span></h1>
+      <div class="hero-subtitle">Educator · Leader · Coach</div>
+      <p class="hero-tagline">
+        An engineer's precision. A captain's command. A coach's heart.<br>
+        Building champions — on and off the field.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num">B</span>
+          <span class="label">USSF License</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">10+</span>
+          <span class="label">Years Coaching</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">3×</span>
+          <span class="label">Amazon Bestseller</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">IAF</span>
+          <span class="label">Retired Captain</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-gold">Get In Touch</a>
+        <a href="#experience" class="btn btn-outline">View Experience</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">scroll</div>
+</section>
+
+<!-- EDGE STRIP -->
+<div class="edge-strip">
+  <div class="edge-item"><span class="icon">✈️</span> Israeli Air Force Captain (Ret.)</div>
+  <div class="edge-item"><span class="icon">⚙️</span> Engineering Degree</div>
+  <div class="edge-item"><span class="icon">📚</span> 3× Amazon Bestselling Author</div>
+  <div class="edge-item"><span class="icon">🌎</span> Trilingual: EN · ES · HE</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-bg" id="about">
+  <div class="max-w">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">About</div>
+        <h2>A Coach Who Leads From Experience</h2>
+        <div class="divider"></div>
+        <p>
+          Amikam Yalovetzky brings a rare combination of credentials to the sideline. As a
+          <strong>retired Captain of the Israeli Air Force</strong>, he learned to lead under
+          high-pressure, high-stakes conditions — the kind that forge real discipline and
+          unshakeable composure. His <strong>engineering background</strong> drives a
+          systematic, data-informed approach to player development and game preparation.
+        </p>
+        <p>
+          A <strong>three-time Amazon International Bestselling Author</strong>, Amikam
+          understands how to communicate vision, motivate people, and build lasting programs.
+          These qualities translate directly to the field — where he runs meticulously planned
+          sessions designed around player decision-making, not just execution.
+        </p>
+        <p>
+          His coaching philosophy centers on one question: <strong><em>"Figure it out."</em></strong>
+          He develops players who think for themselves, read the game, and lead without being
+          told. The result is a team that competes — and a program that grows year over year.
+        </p>
+        <p>
+          Multilingual in <strong>English, Spanish, and Hebrew</strong>, Amikam connects
+          with athletes from all backgrounds and builds the kind of inclusive team culture
+          that keeps players coming back.
+        </p>
+      </div>
+      <div class="about-pillars">
+        <div class="pillar">
+          <span class="icon">🎯</span>
+          <h4>Player-Centric</h4>
+          <p>Players are athletes first, people second. Development happens when they feel seen and challenged.</p>
+        </div>
+        <div class="pillar">
+          <span class="icon">🧠</span>
+          <h4>Tactical Intelligence</h4>
+          <p>Systematic game preparation using MBP Barcelona principles and US Soccer frameworks.</p>
+        </div>
+        <div class="pillar">
+          <span class="icon">🏆</span>
+          <h4>Winning Culture</h4>
+          <p>High standards + positive environment = sustained results. Both, never one at the expense of the other.</p>
+        </div>
+        <div class="pillar">
+          <span class="icon">📈</span>
+          <h4>Constant Improvement</h4>
+          <p>Coaches who stop learning stop leading. Certified at the highest level, still growing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEYOND SOCCER -->
+<section id="beyond">
+  <div class="max-w">
+    <div class="section-label">Beyond the Field</div>
+    <h2>What Sets This Coach Apart</h2>
+    <div class="divider"></div>
+    <div class="beyond-grid">
+      <div class="beyond-card">
+        <span class="bc-icon">✈️</span>
+        <h3>Israeli Air Force Captain</h3>
+        <p>
+          Military service as a Captain in the Israeli Air Force forged elite leadership
+          under pressure, mission planning, team coordination, and performance in
+          high-stakes environments — skills that translate directly to the varsity sideline.
+        </p>
+      </div>
+      <div class="beyond-card">
+        <span class="bc-icon">⚙️</span>
+        <h3>Engineering Degree</h3>
+        <p>
+          An engineering mindset means systematic problem-solving, data-driven decisions,
+          and structured periodization. Amikam doesn't guess about opponent tendencies or
+          fitness loads — he analyzes and plans with precision.
+        </p>
+      </div>
+      <div class="beyond-card">
+        <span class="bc-icon">📚</span>
+        <h3>3× Bestselling Author</h3>
+        <p>
+          Three Amazon International Bestsellers demonstrate the ability to communicate
+          complex ideas clearly and inspire audiences — a skill that drives team meetings,
+          parent engagement, and a program's public identity.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy-bg" id="philosophy">
+  <div class="max-w">
+    <div class="section-label">Coaching Philosophy</div>
+    <h2>Develop the Person.<br>Build the Player.</h2>
+    <div class="divider"></div>
+    <p class="philosophy-intro">
+      "Real leadership comes from a deep commitment to providing a holistic environment that
+      meets players' needs — to belong, to contribute, to do meaningful work, and to have an
+      opportunity to grow."
+    </p>
+    <div class="values-grid">
+      <div class="value-card">
+        <span class="value-number">01</span>
+        <h4>Integrity</h4>
+        <p>Be a role model. Every interaction models what it means to be a great teammate,
+        competitor, and person. Actions speak before words.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-number">02</span>
+        <h4>Player-Centric</h4>
+        <p>Understand each player as a human being before an athlete. Unconditional individual
+        attention drives the confidence needed to take risks and grow.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-number">03</span>
+        <h4>Goals Oriented</h4>
+        <p>SMART goals — process, performance, and outcome — give every player and the team
+        direction, accountability, and measurable progress milestones.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-number">04</span>
+        <h4>Teamwork</h4>
+        <p>Agreed-upon team behaviors and healthy dialogue build the trust that converts
+        a group of players into a unit that fights for each other.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-number">05</span>
+        <h4>Safe Environment</h4>
+        <p>Physical safety (ACL prevention, injury protocols) and psychological safety
+        (inclusive culture) are non-negotiable foundations of a great program.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-number">06</span>
+        <h4>Constant Improvement</h4>
+        <p>Aligned with the US Soccer Player Development Framework (Experience → Reflection
+        → Development → Application). The coach grows alongside the players.</p>
+      </div>
+    </div>
+    <div class="philosophy-quote">
+      <blockquote>
+        "During training you can hear him say his favorite phrase: 'Figure it out.' In a world
+        where players execute only what the coach says or what parents are shouting, Amikam
+        challenges his players to think. His ability to help players understand and love the game
+        at a different level are unmatched."
+      </blockquote>
+      <cite>— Daniela De Sousa, Head Girls Soccer Coach, Burlington High School</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="certs-bg" id="certifications">
+  <div class="max-w">
+    <div class="section-label text-center">Credentials</div>
+    <h2 class="text-center">Certifications & Licenses</h2>
+    <div class="divider" style="margin: 0 auto 36px;"></div>
+    <div class="certs-grid">
+      <div class="cert-card gold">
+        <div class="cert-badge">B</div>
+        <div>
+          <h4>USSF National "B" License</h4>
+          <p>US Soccer Federation · Highest coaching credential in this application</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">C</div>
+        <div>
+          <h4>USSF National "C" License</h4>
+          <p>US Soccer Federation · Advanced coaching certification</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge">D</div>
+        <div>
+          <h4>USSF National "D" License</h4>
+          <p>US Soccer Federation · Youth development focus</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="font-size:0.65rem;">4v4</div>
+        <div>
+          <h4>USSF 4v4 License</h4>
+          <p>Small-sided games · Youth grassroots development</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="font-size:0.65rem;">9v9</div>
+        <div>
+          <h4>USSF 9v9 License</h4>
+          <p>Youth development · Pre-academy pathways</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="font-size:0.6rem;">11v11</div>
+        <div>
+          <h4>USSF 11v11 License</h4>
+          <p>Full-sided game · High school and competitive levels</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="font-size:0.6rem; background:#c41e3a;">MBP</div>
+        <div>
+          <h4>MBP Barcelona School of Coaches</h4>
+          <p>Game Analysis in Youth Soccer · International methodology</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="background:#2e7d32;">✓</div>
+        <div>
+          <h4>SafeSport Certified</h4>
+          <p>Current certification · Safe & inclusive athletic environments</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-badge" style="background:#6a1b9a;">REF</div>
+        <div>
+          <h4>USSF Grassroots Referee</h4>
+          <p>Deep understanding of the laws of the game</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="max-w">
+    <div class="section-label">Track Record</div>
+    <h2>Coaching Experience</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+
+      <div class="timeline-item featured">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">2023 – 2026</span>
+          <span class="timeline-org">Boston Bolts · Metro North</span>
+        </div>
+        <h3>Head Soccer Coach — Boston Bolts (U18)</h3>
+        <ul>
+          <li>Led elite U18 club program, achieving a Spring 2026 record of <strong>16-2-3</strong> (GF:108 / GA:18)</li>
+          <li>Designed and delivered high-intensity training sessions integrating skill development, tactical understanding, and sports science-informed conditioning</li>
+          <li>Developed and executed opponent-specific game strategies, leading the team to 2× tournament championships and multiple finalist finishes</li>
+          <li>Mentored assistant coaches; fostered a culture where coaches grow alongside players</li>
+          <li>Built individualized development plans (IDPs) for each player, including goal-setting and reflective feedback sessions</li>
+          <li>Brokered and managed a MediaTek/Samsung innovation partnership for the Boston Bolts, creating meaningful community impact for young athletes</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item featured">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">2024 – 2026</span>
+          <span class="timeline-org">Burlington High School · Girls Soccer</span>
+        </div>
+        <h3>Head Coach — Burlington High School JV Girls</h3>
+        <ul>
+          <li>Elevated program performance contributing directly to the Varsity team's record 10-win season (9-2-1, GF:46 / GA:9 in Fall 2024)</li>
+          <li>Built a player-centered culture that prioritized development and decision-making over athleticism alone</li>
+          <li>Mentored individual players through challenges both on and off the field, creating a team environment described as "family" by athletes and parents</li>
+          <li>Developed multi-year scouting and program-building strategies with Varsity Head Coach Daniela De Sousa</li>
+          <li>Redesigned evaluation processes to emphasize soccer intelligence and decision-making — reforms still in place today</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">2020 – 2024</span>
+          <span class="timeline-org">Burlington Youth Soccer Association</span>
+        </div>
+        <h3>Head Coach — Burlington Travel Team</h3>
+        <ul>
+          <li>Ran year-round competitive travel program for youth players, managing full cycle from tryouts through post-season</li>
+          <li>Designed session plans following Play-Practice-Play methodology and US Soccer's 5-element framework</li>
+          <li>Cultivated long-term player relationships — athletes consistently returned season after season</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">2023 – 2024</span>
+          <span class="timeline-org">BYSA</span>
+        </div>
+        <h3>Head of Evaluations — Burlington Youth Soccer Association</h3>
+        <ul>
+          <li>Redesigned the player evaluation framework for the entire Burlington soccer community</li>
+          <li>Shifted evaluation criteria to prioritize soccer intelligence, decision-making, and long-term development potential over pure athleticism</li>
+          <li>Reforms were adopted by the board and remain in operation</li>
+          <li>Awarded the <strong>Dean Conway Coach Education Grant</strong> (MYSL) in recognition of commitment to coaching education</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-date">2022 – 2023</span>
+          <span class="timeline-org">BYSA</span>
+        </div>
+        <h3>Off-Season Program Leader — Burlington Youth Soccer Association</h3>
+        <ul>
+          <li>Designed and led off-season programming to maintain player fitness and technical development year-round</li>
+          <li>Developed curriculum focused on individual skill refinement during the non-competitive window</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-bg" id="results">
+  <div class="max-w">
+    <div class="section-label">On the Scoreboard</div>
+    <h2>Competition Results</h2>
+    <div class="divider"></div>
+    <div class="results-grid">
+      <div class="result-card">
+        <span class="trophy">🏆</span>
+        <h4>Copa Surf Tournament 2025</h4>
+        <p>Champions</p>
+      </div>
+      <div class="result-card">
+        <span class="trophy">🏆</span>
+        <h4>Tapin Memorial International 2025</h4>
+        <p>Champions</p>
+      </div>
+      <div class="result-card">
+        <span class="trophy">🥈</span>
+        <h4>IFA New England 2025</h4>
+        <p>Finalist</p>
+      </div>
+      <div class="result-card">
+        <span class="trophy">🥈</span>
+        <h4>Memorial Day Tournament 2024</h4>
+        <p>Finalist</p>
+      </div>
+      <div class="result-card">
+        <span class="trophy">🥈</span>
+        <h4>MYSL Cup 2023</h4>
+        <p>Finalist</p>
+      </div>
+      <div class="result-card">
+        <span class="trophy">🎖️</span>
+        <h4>Dean Conway Coach Grant</h4>
+        <p>MYSL Award</p>
+      </div>
+    </div>
+    <div class="record-bar">
+      <div class="record-item">
+        <span class="big">16-2-3</span>
+        <span class="sm">Boston Bolts Spring 2026</span>
+      </div>
+      <div class="record-item">
+        <span class="big">108</span>
+        <span class="sm">Goals For (Spring 2026)</span>
+      </div>
+      <div class="record-item">
+        <span class="big">18</span>
+        <span class="sm">Goals Against (Spring 2026)</span>
+      </div>
+      <div class="record-item">
+        <span class="big">9-2-1</span>
+        <span class="sm">BHS Fall 2024 (JV + Varsity Impact)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg" id="testimonials">
+  <div class="max-w">
+    <div class="section-label text-center">Letters of Recommendation</div>
+    <h2 class="text-center">What Others Say</h2>
+    <div class="divider" style="margin: 0 auto 40px;"></div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"I am proud to offer my enthusiastic and wholehearted recommendation of Amikam Yalovetzky
+        for a head coaching position. While I am saddened to be losing such an amazing person and coach
+        on my staff, I am confident that any program would be strengthened by his leadership, vision,
+        and care for players."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DD</div>
+          <div class="author-info">
+            <div class="name">Daniela De Sousa</div>
+            <div class="role">Head Girls Soccer Coach · Burlington High School</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Amikam has become my coaching mentor over the past several years. What stands out most is
+        his exceptional ability to connect with players and foster a positive team environment while
+        still maintaining high standards for performance. His strategic thinking and innovative coaching
+        techniques have consistently helped his teams achieve their goals."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div class="author-info">
+            <div class="name">Steven Reda</div>
+            <div class="role">Head Soccer Coach · Burlington Soccer Academy</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Amikam has proven himself to be a dedicated and conscientious member of staff who is focused
+        on Player Development first and foremost. This is evident in how he plans his sessions — well
+        organized, engaging and game orientated. His love for the game shows in his effort and his
+        interactions with his players and families."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">KL</div>
+          <div class="author-info">
+            <div class="name">Kieran Laverty</div>
+            <div class="role">Regional Director · Boston Bolts Metro North</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Coach A does a nice job 'corralling' a sizeable group of fifteen-year-old boys from different
+        communities, backgrounds, and skill levels. A tough age to coach, but it's obvious to me that he
+        has found a way to keep them organized, engaged, and on plan. My normally quiet son has matured
+        and grown under his leadership."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SG</div>
+          <div class="author-info">
+            <div class="name">Sean Goulding</div>
+            <div class="role">Parent · Boston Bolts U18</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"There is no doubt in my mind that the varsity team improved to a record 10-win season because
+        of his impact both on and off the field. He was already talking about the scouting report for the
+        next couple of years after our first post-season meeting. He puts pencil to paper — and delivers."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DD</div>
+          <div class="author-info">
+            <div class="name">Daniela De Sousa</div>
+            <div class="role">Burlington High School Girls' Soccer Head Coach</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"He was instrumental in brokering the MediaTek partnership for the Boston Bolts and worked
+        closely with our team to create meaningful impact for young athletes, while delivering
+        high-quality work with professionalism, reliability, and responsiveness."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MK</div>
+          <div class="author-info">
+            <div class="name">Marco Kochman</div>
+            <div class="role">Executive Director · Boston Bolts</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="max-w">
+    <div class="section-label">Let's Connect</div>
+    <h2>Ready to Lead Your Program</h2>
+    <div class="divider"></div>
+    <p class="contact-intro">
+      Committed to building a competitive, player-centered varsity program that develops
+      athletes as students, competitors, and leaders. Let's talk about what I can bring
+      to your school community.
+    </p>
+    <div class="contact-links">
+      <a href="tel:7818241444" class="contact-link">
+        <span class="ci">📞</span> 781-824-1444
+      </a>
+      <a href="mailto:info@amikamyalovetzky.com" class="contact-link">
+        <span class="ci">✉️</span> info@amikamyalovetzky.com
+      </a>
+      <a href="https://www.linkedin.com/in/amikamyalovetzky/" class="contact-link" target="_blank">
+        <span class="ci">🔗</span> LinkedIn Profile
+      </a>
+      <a href="http://www.amikamyalovetzky.com" class="contact-link" target="_blank">
+        <span class="ci">🌐</span> amikamyalovetzky.com
+      </a>
+    </div>
+    <div style="color: rgba(255,255,255,0.5); font-size: 0.85rem; margin-bottom: 28px;">Burlington, MA</div>
+    <a href="mailto:info@amikamyalovetzky.com" class="contact-btn">Send an Email</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Amikam Yalovetzky · Varsity Soccer Head Coach Candidate · Burlington, MA · © 2026</p>
+  <p style="margin-top: 6px; font-size: 0.7rem; opacity: 0.5;">
+    USSF B License · Israeli Air Force (Ret.) · 3× Amazon International Bestselling Author · B.Eng.
+  </p>
+</footer>
+
+</body>
+</html>
